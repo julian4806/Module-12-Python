@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+
+:root {
+  --kaas: rgb(43, 43, 101);
+  --nav: #16253c;
+  --hooi: wheat;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inconsolata", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(var(--nav), rgb(7, 7, 7));
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 850px;
+  background-color: var(--kaas);
+}
+
+/* NAVIGATION SECTION */
+nav {
+  background-color: var(--nav);
+  color: var(--hooi);
+  top: 0;
+  z-index: 1;
+  padding: 10px;
+
+  position: fixed;
+  top: -50px;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+}
+
+nav > .container {
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+nav > .container > ul {
+  display: flex;
+  align-items: center;
+}
+nav > .container > ul > li {
+  margin: 0 10px;
+  list-style-type: none;
+}
+nav > .container > ul > li a {
+  text-decoration: none;
+  color: var(--hooi);
+}
+
+/* HERO SECTION */
+header {
+  /* position: relative; */
+  background-image: url(/static/img/banner.jpg);
+  height: 100vh;
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header > h1 {
+  text-align: center;
+  font-size: 45px;
+  color: var(--hooi);
+}
+
+/* ABOUT ME SECTION */
+.about-me > .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-me > .container > .left {
+  background-color: rgb(65, 65, 129);
+  width: 70%;
+  height: 30px;
+  height: 400px;
+  padding: 20px;
+  color: var(--hooi);
+}
+.about-me > .container > .left > p {
+  padding: 15px 0;
+  height: 50%;
+}
+.about-me > .container > .left > p > a {
+  color: var(--hooi);
+  font-style: italic;
+}
+
+.about-me_img-grid {
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.about-me_img-grid > img {
+  width: 100%;
+  /* height: 120px; */
+  aspect-ratio: 4/3;
+  border-radius: 5px;
+  cursor: pointer;
+  object-fit: cover;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+.about-me_img-grid > img:hover,
+.portfolio-section > .container > .card > a:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+  transition: transform 0.1s;
+}
+
+.about-me > .container > .right {
+  background-color: rgb(43, 43, 101);
+  width: 30%;
+  height: 30px;
+  height: 400px;
+}
+
+.about-me > .container > .right > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 10px;
+  border-radius: 15px;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+/* DISPLAY PROGRAMMING LANGUAGES */
+.programming-languages > .container > h2 {
+  text-align: center;
+  padding: 20px 0;
+  background-color: var(--kaas);
+  color: var(--hooi);
+}
+.programming-languages > .container > .img-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+.programming-languages > .container > .img-grid > .img-card {
+  position: relative;
+}
+
+.programming-languages > .container > .img-grid > .img-card > .img {
+  width: 100%;
+  border-radius: 15px;
+  padding: 10px;
+  display: block;
+  margin: 0 auto;
+  aspect-ratio: 1/1;
+  background-color: var(--hooi);
+  cursor: pointer;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+.programming-languages > .container > .img-grid > .img-card > .img:hover {
+  opacity: 0.5;
+  filter: blur(5px);
+}
+
+.programming-languages > .container > .img-grid > .img-card > .info {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  color: black;
+  font-weight: bold;
+  visibility: hidden;
+}
+.programming-languages > .container > .img-grid > .img-card > .info > span {
+  padding: 10px;
+  background-color: lightgray;
+  border-radius: 5px;
+  box-shadow: 2px 4px 10px rgb(0, 0, 0);
+}
+
+/* Show Items on Hover */
+.programming-languages
+  > .container
+  > .img-grid
+  > .img-card
+  > .img:hover
+  + .info {
+  visibility: visible;
+}
+
+/* Skill Bar */
+.programming-languages
+  > .container
+  > .img-grid
+  > .img-card
+  > .info
+  > .skill-bar {
+  background: #fff;
+  box-shadow: 2px 4px 10px rgb(0, 0, 0);
+  width: 80%;
+  border-radius: 5px;
+}
+
+.programming-languages
+  > .container
+  > .img-grid
+  > .img-card
+  > .info
+  > .skill-bar
+  .bar {
+  background: #00f;
+  height: 16px;
+  border-radius: 5px;
+}
+
+/* PORTFOLIO SECTION */
+.portfolio-section > .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.portfolio-section > .container > .card {
+  height: 100px;
+  background-color: black;
+  margin: 20px;
+  color: var(--hooi);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.portfolio-section > .container > .card > a {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--hooi);
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1100px) {
+  /* Portfolio */
+  .portfolio-section > .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /* About Me */
+  .about-me > .container {
+    flex-direction: column;
+  }
+
+  .about-me > .container > .left {
+    width: 100%;
+    height: 100%;
+  }
+
+  .about-me > .container > .right {
+    width: 100%;
+  }
+
+  .portfolio-section > .container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .about-me_img-grid {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Programming Languages */
+  .programming-languages > .container > .img-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+  }
+}

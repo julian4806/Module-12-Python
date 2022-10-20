@@ -1,0 +1,245 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static './css/stylesheet.css' %}" />
+
+    <title>Portfolio</title>
+  </head>
+  <body></body>
+</html>
+{% endcomment %} {% comment %} Portfolio {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/stylesheet.css' %}" />
+    <script src="{% static '/js/script.js' %}" defer></script>
+  </head>
+
+  <body>
+    <main>
+      <!-- Navbar Section -->
+      <nav>
+        <div class="container">
+          <h2>Portfolio</h2>
+          <ul>
+            <li>
+              <a
+                href="https://github.com/julian4806?tab=repositories"
+                target="_blank"
+                >Github</a
+              >
+            </li>
+            <li><a href="mailto: 210549@student.glu.nl">Email</a></li>
+          </ul>
+        </div>
+      </nav>
+      <header>
+        <h1>
+          Julian van Husen <br />
+          <i> Web-Developer </i>
+        </h1>
+      </header>
+
+      <!-- Display About Me Section -->
+      <section class="about-me">
+        <div class="container">
+          <div class="left">
+            <h2>Who am I?</h2>
+            <p>
+              My name is Julian van Husen, 20 years old and I come from
+              Nieuwegein, Utrecht. My hobbies are programming and experimenting
+              with my Raspberry PI. <br /><br />
+              I'm currently studying at
+              <a
+                href="https://www.glu.nl/?utm_source=google&utm_medium=organic&utm_campaign=google_mybusiness&utm_content=wilhelminalaan"
+                >Graphic Lyceum Utrecht</a
+              >. <br /><br />
+              Second years student, Web-Developer niveau 4
+            </p>
+            <div class="about-me_img-grid">
+              {% comment %} <img src="{% static '/img/rpi.jpg' %}" alt="" /> {%
+              endcomment %} {% comment %}
+              <img src="{% static '/img/glu.jpg' %}" alt="" /> {% endcomment %}
+              {%block about_me_img_grid%}
+              
+              {%endblock%}
+            </div>
+          </div>
+          <div class="right">
+            <img src="{% static '/img/julian.jpeg' %}" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Display Programming Languages -->
+      <section class="programming-languages">
+        <div class="container">
+          <h2>Programming Languages Skill Levels</h2>
+          <div class="img-grid">
+            <div class="img-card">
+              <img class="img" src="{% static '/img/html.svg' %}" alt="" />
+              <div class="info">
+                <span>HTML</span>
+                <div class="skill-bar">
+                  <div class="bar" style="width: 70%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="img-card">
+              <img class="img" src="{% static '/img/css.svg' %}" alt="" />
+              <div class="info">
+                <span>CSS</span>
+                <div class="skill-bar">
+                  <div class="bar" style="width: 50%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="img-card">
+              <img
+                class="img"
+                src="{% static '/img/javascript.svg' %}"
+                alt=""
+              />
+              <div class="info">
+                <span>JavaScript</span>
+                <div class="skill-bar">
+                  <div class="bar" style="width: 40%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="img-card">
+              <img class="img" src="{% static '/img/php.svg' %}" alt="" />
+              <div class="info">
+                <span>PHP</span>
+                <div class="skill-bar">
+                  <div class="bar" style="width: 30%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="img-card">
+              <img class="img" src="{% static '/img/wordpress.svg' %}" alt="" />
+              <div class="info">
+                <span>WordPress</span>
+                <div class="skill-bar">
+                  <div class="bar" style="width: 24%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="img-card">
+              <img class="img" src="{% static '/img/python.svg' %}" alt="" />
+              <div class="info">
+                <span>Python</span>
+                <div class="skill-bar">
+                  <div class="bar" style="width: 5%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Display Portfolio Items -->
+      <section class="portfolio-section">
+        <div class="container">
+          <div class="card">
+            <a
+              href="https://julianvh.nl/portfolio-items/arcade-game-js/index.php"
+              target="_blank"
+              ><span
+                >JavaScript Arcade Game
+                <i class="fa-solid fa-arrow-up-right-from-square"></i></span
+            ></a>
+            <a
+              href="https://github.com/julian4806/Arcade-Game-JS"
+              target="_blank"
+              ><span
+                >Source Code
+                <i class="fa-solid fa-arrow-up-right-from-square"></i></span
+            ></a>
+          </div>
+
+          <div class="card">
+            <a
+              href="https://julianvh.nl/portfolio-items/3-minute-timer/index.html"
+              target="_blank"
+              ><span
+                >3 minute timer
+                <i class="fa-solid fa-arrow-up-right-from-square"></i></span
+            ></a>
+            <a
+              href="https://github.com/julian4806/3-Minute-Timer"
+              target="_blank"
+              ><span
+                >Source Code
+                <i class="fa-solid fa-arrow-up-right-from-square"></i></span
+            ></a>
+          </div>
+
+          <div class="card">
+            <a
+              href="https://julianvh.nl/portfolio-items/platastic/index.html"
+              target="_blank"
+              ><span
+                >Crossover Challenge Loofy's
+                <i class="fa-solid fa-arrow-up-right-from-square"></i></span
+            ></a>
+            <a
+              href="https://github.com/julian4806/crossmedia-challenge-Loofys"
+              target="_blank"
+              ><span
+                >Source Code
+                <i class="fa-solid fa-arrow-up-right-from-square"></i></span
+            ></a>
+          </div>
+
+          <div class="card">
+            <a
+              href="http://u210549.gluweb.nl/webshop-p3/homepagina/index.html"
+              target="_blank"
+              ><span
+                >PHP-Webshop
+                <i class="fa-solid fa-arrow-up-right-from-square"></i></span
+            ></a>
+            <a
+              ><span
+                ><s>Source Code </s
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i></span
+            ></a>
+          </div>
+
+          <div class="card">
+            <a
+              href="https://julianvh.nl/portfolio-items/wpm-test/index.html"
+              target="_blank"
+              ><span
+                >Typing Speed Test
+                <i class="fa-solid fa-arrow-up-right-from-square"></i></span
+            ></a>
+            <a
+              href="https://github.com/julian4806/typing-speed-test-game"
+              target="_blank"
+              ><span
+                >Source Code
+                <i class="fa-solid fa-arrow-up-right-from-square"></i></span
+            ></a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
